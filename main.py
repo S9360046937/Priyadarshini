@@ -1,24 +1,16 @@
-#1.1Implement a recursive function to calculate the factorial of a given number.
-"""
-1!= 1 × 1
-21= 2 × 1!--->2 × 1
-3!= 3 × 21--->3 × 2 × 1
-.
-.
-10!= 10 × 9! --->10 × 9 x 8 x...
+def linearSearchProduct(productList, targetProduct):
+  indices = []
 
-Formula - n × (n-1)!
-"""
+  for index, product in enumerate(productList):
+    if product == targetProduct:
+      indices.append(index)
+
+  return indices
 
 
-def fact_rec(n):
-  if n == 0 or n == 1:
-    return 1
-  else:
-    return n * fact_rec(n - 1)
-
-
-number = int(input("Enter a value:"))
-res = fact_rec(number)
-
-print("The factorial off{}is{}".format(number, res))
+# Example usage:
+products = ["shoes", "boot", "loafer", "shoes", "sandal", "shoes"]
+target = "shoes"
+target2 = 'apple'
+result = linearSearchProduct(products, target)
+print(result)
